@@ -1,0 +1,54 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+form {
+  display:flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+button {
+  cursor: pointer;
+}
+.container {
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+  grid-gap: 5px;
+  text-align: center;
+}
+.container form{
+  grid-column: 2;
+  margin: 0 auto;
+}
+
+.container * {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.title {
+  height: 100%;
+  width: 100%;
+  padding: 10px auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+h1 {
+text-align: center;
+margin-top: 40px;
+margin-bottom: 40px;
+}
+
+select {
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  border: 1px solid black;;
+  border-radius: 3px;
+}
