@@ -10,7 +10,7 @@
 <name>StockCheckApp</name>
 
 <description>
-    Stock Check App 
+    Stock Check App
 </description>
 
 <author>
@@ -18,11 +18,11 @@
 </author>
 
 
-
+Images\hdpi.png
     <!-- Define app icon for each platform. -->
-    <icon src="icon.png" />
-    <icon src="ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
-    <icon src="mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
-    <icon src="hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
-    <icon src="xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+    <icon src="Images\icon.png" />
+    <icon src="Images\ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
+    <icon src="Images\mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+    <icon src="Images\hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+    <icon src="Images\xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
     </widget>
