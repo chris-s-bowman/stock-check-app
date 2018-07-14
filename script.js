@@ -9,12 +9,11 @@ function create(el) {
 
 // array of bumper names
 var selectArr = []
-// var bumpers = ["083 Front", "083 High Grade Rear", "083 Low Grade Rear", "B12P Front", "B12P Rear", "GD1A GT Front", "GD1A Sport Front", "GD1A All Road Front", "GD1A Sport Lower", "GD1A Lower 1", "GD1A Twin Lower", "724 Front Upper", "724 Rear Upper","724 Front Lower","724 Rear Lower", "Nismo Rear"];
-var bumpers = ["724 Rear Lower", "724 Front Lower", "724 Front Upper", "B12P Rear", "724 Rear Upper", "B12P Front", "083 High Grade Rear", "083 Low Grade Rear", "GD1A GT Front", "GD1A Sport Lower", "GD1A Lower 1", "GD1A Twin Lower", "083 Front", "Nismo Rear", "GD1A All Road Front", "GD1A All Road Rear", "GD1A Sport Front" ];
+var bumpers = ["724 Rear Lower", "724 Front Lower", "724 Front Upper", "B12P Rear", "724 Rear Upper", "B12P Front", "083 High Grade Rear", "083Low Grade Rear", "GD1A GT Front", "GD1A Sport Lower", "GD1A Lower 1", "GD1A Twin Lower", "083 Front", "Nismo Rear", "GD1A All Road Front", "GD1A All Road Rear", "GD1A Sport Front" ];
 var form = document.createElement("form");
 form.setAttribute("method", "post");
 
-
+var totalsDiv = $(".totals");
 
 for(var i = 0; i < bumpers.length; i++) {
   var label = create("label");
@@ -31,18 +30,19 @@ for(var i = 0; i < bumpers.length; i++) {
   calc.innerHTML = "Calculate";
   calc.setAttribute("type", "button");
   calc.classList.add("calc");
-  form.appendChild(calc);
+  label.appendChild(calc);
 
   var del = create("button");
   del.innerHTML = "Delete";
   del.setAttribute("type", "button");
   del.classList.add("del");
-  form.appendChild(del);
+  label.appendChild(del);
 
   var val = create("div");
   val.innerHTML = 0;
   val.classList.add("values")
-  form.appendChild(val)
+  label.appendChild(val)
+
 
 
   for(var j = 0; j < 100; j++){
