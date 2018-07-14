@@ -19,10 +19,10 @@
 
     <!-- Define app icon for each platform. -->
     <platform name="android">
-      <icon src="www\res\icon.png" />
-      <icon src="www\res\ldpi.png" density="ldpi" />
-      <icon src="www\res\mdpi.png" density="mdpi" />
-      <icon src="www\res\hdpi.png" density="hdpi" />
-      <icon src="www\res\xhdpi.png" density="xhdpi" />
+      <icon src="www/res/icon.png" />
+      <icon src="www/res/ldpi.png" density="ldpi" />
+      <icon src="www/res/mdpi.png" density="mdpi" />
+      <icon src="www/res/hdpi.png" density="hdpi" />
+      <icon src="www/res/xhdpi.png" density="xhdpi" />
     </platform>
     </widget>
