@@ -17,12 +17,12 @@
     Chris Bowman
 </author>
 
+www\res\icon.png
 
-Images\hdpi.png
     <!-- Define app icon for each platform. -->
-    <icon src="Images\icon.png" />
-    <icon src="Images\ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
-    <icon src="Images\mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
-    <icon src="Images\hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
-    <icon src="Images\xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+    <icon src="www\res\icon.png" />
+    <icon src="www\res\ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
+    <icon src="www\res\mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+    <icon src="www\res\hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+    <icon src="www\res\xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
     </widget>
