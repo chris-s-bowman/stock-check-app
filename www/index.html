@@ -7,17 +7,20 @@
     <link rel="shortcut icon" type="image/png" href="Images\Logo.png" sizes="16x16">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
   <body>
-    <div class="title">
+    <button class="scrollButton" id="scrollDownButton"><i class="fas fa-chevron-down"></i></button>
+    <button class="scrollButton hide" id="scrollUpButton"><i class="fas fa-chevron-up"></i></button>
+    <div class="title" id="top">
       <h1 class="hi">Stock Check App</h1>
     </div>
 
     <div class="container"></div>
     <div class="totals">
-      <h1 class="title">Totals</h1>
+      <h1 class="title" id='totals'>Totals</h1>
     </div>
-
+    <h6>Developed by Chris Bowman</h6>
 
     <script src="script.js" charset="utf-8"></script>
   </body>

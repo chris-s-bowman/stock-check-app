@@ -9,7 +9,7 @@ function create(el) {
 
 // array of bumper names
 var selectArr = []
-var bumpers = ["724 Rear Lower", "724 Front Lower", "724 Front Upper", "B12P Rear", "724 Rear Upper", "B12P Front", "083 High Grade Rear", "083 Low Grade Rear", "GD1A GT Front", "GD1A Sport Lower", "GD1A Lower 1", "GD1A Twin Lower", "083 Front", "Nismo Rear", "GD1A All Road Front", "GD1A All Road Rear", "GD1A Sport Front" ];
+var bumpers = ["724 Rear Lower", "724 Front Lower", "724 Front Upper", "B12P Rear", "724 Rear Upper", "B12P Front", "083 High Grade Rear", "083 Low Grade Rear", "GD1A GT Front", "GD1A Sport Lower", "GD1A Lower #1", "GD1A Twin Lower", "083 Front", "Nismo Rear", "GD1A All Road Front", "GD1A All Road Rear", "GD1A Sport Front" ];
 bumpers.sort(function(a, b) {
   if(a < b) return -1;
   if(a > b) return 1;
@@ -113,9 +113,25 @@ function calcButtons(buttonNum, inputNum, valueNum, delNum, resultNum, bumpersNu
   });
   delNum.addEventListener("click", () => {
     valueNum.innerHTML = 0;
+    displayNumOfParts.innerHTML = 0;
     count = 0;
   });
 };
 for(var i = 0; i < button.length; i++) {
   calcButtons(button[i], inputs[i], vals[i], delButton[i], result[i], bumperObj[i]);
 }
+
+var scrollDownButton = $("#scrollDownButton");
+var scrollUpButton = $("#scrollUpButton");
+
+scrollDownButton.addEventListener("click", () => {
+  document.getElementById('totals').scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+  scrollDownButton.classList.add("hide");
+  scrollUpButton.classList.remove("hide");
+});
+
+scrollUpButton.addEventListener("click", () => {
+  document.getElementById('top').scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+  scrollUpButton.classList.add("hide");
+  scrollDownButton.classList.remove("hide")
+});

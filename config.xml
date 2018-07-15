@@ -27,6 +27,7 @@
     </platform>
 
     <!-- Splash Screen -->
+    <splash src="splash.png" />
     <splash src="res/android/splash-port-ldpi.png" platform="android" qualifier="ldpi" />
     <splash src="res/android/splash-port-mdpi.png" platform="android" qualifier="mdpi" />
     <splash src="res/android/splash-port-hdpi.png" platform="android" qualifier="hdpi" />
