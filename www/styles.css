@@ -160,6 +160,26 @@ h6 {
   opacity: 1;
 }
 
+i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+  position: relative;
+  top: -3.5px;
+    transform: rotate(45deg);
+    transform: translate(200em);
+    -webkit-transform: rotate(45deg);
+}
+.up {
+  position: relative;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
 .hide {
   display: none;
 }
