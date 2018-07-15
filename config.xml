@@ -7,7 +7,7 @@
 
 <!-- versionCode is optional and Android only -->
 
-<name>StockCheckApp</name>
+<name>Stock Check App</name>
 
 <description>
     Stock Check App
@@ -25,4 +25,10 @@
       <icon src="res/android/hdpi.png" density="hdpi" />
       <icon src="res/android/xhdpi.png" density="xhdpi" />
     </platform>
+
+    <!-- Splash Screen -->
+    <splash src="res/android/splash-port-ldpi.png" platform="android" qualifier="ldpi" />
+    <splash src="res/android/splash-port-mdpi.png" platform="android" qualifier="mdpi" />
+    <splash src="res/android/splash-port-hdpi.png" platform="android" qualifier="hdpi" />
+    <splash src="res/android/splash-port-xhdpi.png" platform="android" qualifier="xhdpi" />
     </widget>
