@@ -18,7 +18,11 @@
 </author>
 
 <preference name="orientation" value="portrait" />
-<preference name="SplashScreen" value="none"/>
+<preference name="SplashScreen" value="splash" />
+<preference
+    name="AutoHideSplashScreen"
+    value="true" />
+ <preference name="SplashScreenDelay" value="3000" />
 <plugin name="cordova-plugin-splashscreen" source="npm" version="3.2.1" />
 
     <!-- Define app icon for each platform. -->
