@@ -8,33 +8,36 @@ function create(el) {
 }
 
 // array of bumper names
-var selectArr = []
+var selectArr = [];
 var bumpers = ["724 Rear Lower", "724 Front Lower", "724 Front Upper", "B12P Rear", "724 Rear Upper", "B12P Front", "083 High Grade Rear", "083 Low Grade Rear", "GD1A GT Front", "GD1A Sport Lower", "GD1A Lower #1", "GD1A Twin Lower", "083 Front", "Nismo Rear", "GD1A All Road Front", "GD1A All Road Rear", "GD1A Sport Front" ];
+
+// sort function to order bumper names in alphabetical order
 bumpers.sort(function(a, b) {
   if(a < b) return -1;
   if(a > b) return 1;
   return 0;
-})
+});
+
 // creating object of all bumpers including name and number of parts
 var bumperObj = [];
 for(var i = 0; i < bumpers.length; i++) {
-  bumperObj[i] = {name: bumpers[i], numOfParts: "0"}
+  bumperObj[i] = {name: bumpers[i], numOfParts: "0"};
 }
 
-console.log(bumperObj);
-
+// creating form as a parent element for all of the data
 var form = document.createElement("form");
 form.setAttribute("method", "post");
 
 var totalsDiv = $(".totals");
 
+// all html is added with this for loop
 for(var i = 0; i < bumpers.length; i++) {
   var label = create("label");
   label.setAttribute("for", bumpers[i]);
   label.innerHTML = bumpers[i];
 
   var select = create("select");
-  form.append(label)
+  form.append(label);
   label.appendChild(select);
   select.classList.add("select");
   selectArr.push(select);
@@ -64,10 +67,12 @@ for(var i = 0; i < bumpers.length; i++) {
   for(var j = 0; j < 100; j++){
     var option = document.createElement("option");
 
-    option.text = j
+    option.text = j;
     select.appendChild(option);
-  };
+  }
 }
+
+
 var button = document.getElementsByClassName("calc");
 var delButton = document.getElementsByClassName("del");
 var inputs = document.getElementsByClassName("select");
@@ -79,7 +84,6 @@ $(".container").appendChild(form);
 
 function calcButtons(buttonNum, inputNum, valueNum, delNum, resultNum, bumpersNum) {
   var  count = 0;
-  var parts = 0;
   var partType = inputNum.parentElement.htmlFor;
   var snp = 0;
 
@@ -97,7 +101,7 @@ function calcButtons(buttonNum, inputNum, valueNum, delNum, resultNum, bumpersNu
   }
   console.log(bumpersNum.numOfParts);
   var displayNumOfParts = create("div");
-  displayNumOfParts.classList.add("partsDisplay")
+  displayNumOfParts.classList.add("partsDisplay");
   displayNumOfParts.innerHTML = 0;
   resultNum.appendChild(displayNumOfParts);
   buttonNum.addEventListener("click", () => {
@@ -116,7 +120,8 @@ function calcButtons(buttonNum, inputNum, valueNum, delNum, resultNum, bumpersNu
     displayNumOfParts.innerHTML = 0;
     count = 0;
   });
-};
+
+}
 for(var i = 0; i < button.length; i++) {
   calcButtons(button[i], inputs[i], vals[i], delButton[i], result[i], bumperObj[i]);
 }
@@ -124,14 +129,24 @@ for(var i = 0; i < button.length; i++) {
 var scrollDownButton = $("#scrollDownButton");
 var scrollUpButton = $("#scrollUpButton");
 
+
+// Event Listeners for the scroll button one to flip when scrolled past div and the other two with on click functions.
+window.addEventListener("scroll", function() {
+  var elTar = document.getElementById('totals');
+  if (window.scrollY > (elTar.offsetTop + elTar.offsetHeight - 150)) {
+    scrollDownButton.classList.add("hide");
+    scrollUpButton.classList.remove("hide");
+  }
+  if (window.scrollY < (elTar.offsetTop + elTar.offsetHeight - 150)) {
+    scrollUpButton.classList.add("hide");
+    scrollDownButton.classList.remove("hide");
+  }
+});
+
 scrollDownButton.addEventListener("click", () => {
   document.getElementById('totals').scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
-  scrollDownButton.classList.add("hide");
-  scrollUpButton.classList.remove("hide");
 });
 
 scrollUpButton.addEventListener("click", () => {
   document.getElementById('top').scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
-  scrollUpButton.classList.add("hide");
-  scrollDownButton.classList.remove("hide")
 });

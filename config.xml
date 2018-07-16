@@ -17,6 +17,8 @@
     Chris Bowman
 </author>
 
+<preference name="SplashScreen" value="res/android" />
+
     <!-- Define app icon for each platform. -->
     <platform name="android">
       <icon src="res/android/icon.png" />
