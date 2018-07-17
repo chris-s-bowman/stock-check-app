@@ -64,7 +64,7 @@ for(var i = 0; i < bumpers.length; i++) {
   result.classList.add("result");
   totalsDiv.appendChild(result);
 
-  for(var j = 0; j < 100; j++){
+  for(var j = 1; j < 100; j++){
     var option = document.createElement("option");
 
     option.text = j;
