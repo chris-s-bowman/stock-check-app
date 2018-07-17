@@ -9,14 +9,14 @@ function create(el) {
 
 // array of bumper names
 var selectArr = [];
-var bumpers = ["724 Rear Lower", "724 Front Lower", "724 Front Upper", "B12P Rear", "724 Rear Upper", "B12P Front", "083 High Grade Rear", "083 Low Grade Rear", "GD1A GT Front", "GD1A Sport Lower", "GD1A Lower #1", "GD1A Twin Lower", "083 Front", "Nismo Rear", "GD1A All Road Front", "GD1A All Road Rear", "GD1A Sport Front" ];
+var bumpers = ["083 Front", "083 Low Grade Rear", "083 High Grade Rear", "B12P Front", "B12P Rear", "724 Front Upper", "724 Front Lower", "724 Rear Upper", "724 Rear Lower", "Nismo Rear", "GD1A GT Front", "GD1A Sport Front", "GD1A All Road Front", "GD1A GT/Sport Rear Upper", "GD1A All Road Rear", "GD1A Lower #1", "GD1A Twin Lower", "GD1A Sport Lower" ];
 
 // sort function to order bumper names in alphabetical order
-bumpers.sort(function(a, b) {
-  if(a < b) return -1;
-  if(a > b) return 1;
-  return 0;
-});
+// bumpers.sort(function(a, b) {
+//   if(a < b) return -1;
+//   if(a > b) return 1;
+//   return 0;
+// });
 
 // creating object of all bumpers including name and number of parts
 var bumperObj = [];
@@ -42,17 +42,22 @@ for(var i = 0; i < bumpers.length; i++) {
   select.classList.add("select");
   selectArr.push(select);
 
+  var buttonDiv = create("div");
+  buttonDiv.classList.add("buttonDiv");
+  label.appendChild(buttonDiv);
+
+  var del = create("button");
+  del.innerHTML = "<img class=\"cross\" src=\"cross.svg\">";
+  del.setAttribute("type", "button");
+  del.classList.add("del");
+  buttonDiv.appendChild(del);
+
   var calc = create("button");
   calc.innerHTML = "Calculate";
   calc.setAttribute("type", "button");
   calc.classList.add("calc");
-  label.appendChild(calc);
+  buttonDiv.appendChild(calc);
 
-  var del = create("button");
-  del.innerHTML = "Delete";
-  del.setAttribute("type", "button");
-  del.classList.add("del");
-  label.appendChild(del);
 
   var val = create("div");
   val.innerHTML = 0;
