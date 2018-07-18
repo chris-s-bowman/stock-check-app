@@ -155,3 +155,24 @@ scrollDownButton.addEventListener("click", () => {
 scrollUpButton.addEventListener("click", () => {
   document.getElementById('top').scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
 });
+
+// TESTING EMAIL - DELETE IF BROKEN
+
+document.addEventListener('deviceready', function () {
+}, false);
+
+cordova.plugins.email.isAvailable(
+    function (hasAccount) {
+        // alert('Service is not available') unless isAvailable;
+    }
+);
+var emailButton = $(".email");
+
+emailButton.addEventListener("click", function() {
+  cordova.plugins.email.open({
+      to:      'chris.bowmannn@googlemail.com',
+      subject: 'Greetings',
+      body:    '<h1>Nice greetings from Leipzig</h1>',
+      isHtml:  true
+  });
+});
