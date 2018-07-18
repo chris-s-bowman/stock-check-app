@@ -159,20 +159,24 @@ scrollUpButton.addEventListener("click", () => {
 // TESTING EMAIL - DELETE IF BROKEN
 
 document.addEventListener('deviceready', function () {
+    cordova.plugins.email.isAvailable(
+        function (isAvailable) {
+            alert("is email mobile available? " + (isAvailable ? "Yes" : "No"));
+            if(isAvailable){
+             window.plugin.email.open({
+                 to:      'test@test.com',
+                 subject: 'Greetings',
+                 body:    'How are you? Nice greetings from Leipzig'
+             }, callback, scope);
+           }
+        }
+    );
 }, false);
 
-cordova.plugins.email.isAvailable(
-    function (hasAccount) {
-        // alert('Service is not available') unless isAvailable;
-    }
-);
-var emailButton = $(".email");
+function callback(){
+    console.log("callback function");
+}
 
-emailButton.addEventListener("click", function() {
-  cordova.plugins.email.open({
-      to:      'chris.bowmannn@googlemail.com',
-      subject: 'Greetings',
-      body:    '<h1>Nice greetings from Leipzig</h1>',
-      isHtml:  true
-  });
-});
+function scope(){
+    console.log("scope function");
+}
